@@ -66,22 +66,21 @@ body{
 
 /* BODY */
 
-.wrapper3 ul  {
+.wrapper3 .circle  {
 	display: flex;
 	justify-content: center;
 
 }
 
-.wrapper3 ul li {
+.wrapper3 .circle li {
 	width: 20px;
 	border-radius: 50%;
+	list-style: none;
 	background-color: #D5D5D5;
 	list-style: none;
 	height: 20px;
 	margin: 10px;
 }
-
-
 
 .table {
 	display: none;
@@ -90,34 +89,14 @@ body{
 .table:first-child {
 	width: 100%;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: stretch;
 	padding: 15px 30px;
 	margin: 0 auto;
 	color: #fff;
-	
-}
-
-.column-block {
-	display: flex;
 	flex-direction: column;
-	width: 45%;
-	height: 500px;
-	justify-content: space-between;
-}
-
-.big-block {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	width: 45%;
-	background-image: url('img/1.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
-	border-radius: 10px;
-	height: 500px;
-	padding: 20px;
-	box-shadow: inset -5px -120px 150px -10px rgba(0,0,0,0.3);
+	height: 600px;
+	flex-wrap: wrap;
 }
 
 .table .text {
@@ -138,11 +117,31 @@ body{
 	color: #FCE300;
 }
 
- .small-top-block {
+.table li:first-child {
+	height: 500px;
+	flex-basis: 500px;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	width: 48%;
 	background-image: url('img/1.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
+	border-radius: 10px;
+	padding: 20px;
+	box-shadow: inset -5px -120px 150px -10px rgba(0,0,0,0.3);
+}
+.table li {
+	width: 48%;
 	height: 230px;
+	flex-basis: 230px;
+	margin: 10px 0;
+	flex-grow: 1;
+	list-style: none;
+	background-image: url('img/1.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
@@ -151,18 +150,6 @@ body{
 	box-shadow: inset -5px -120px 150px -10px rgba(0,0,0,0.3);
 }
 
-.small-bottom-block {
-	background-image: url('img/1.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: 230px;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	border-radius: 10px;
-	padding: 15px;
-	box-shadow: inset -5px -120px 150px -10px rgba(0,0,0,0.3);
-}
 
 .active-block {
 	background-image: none !important;

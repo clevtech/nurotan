@@ -242,7 +242,7 @@
     text-align: center;
 }
 
-.button-center {
+.buttons-sidebar .button-center {
     position: relative;
     z-index: 3;
     display: flex;
@@ -251,13 +251,13 @@
     justify-content: space-around;
 }
 
-.button-center .button {
+.buttons-sidebar .button-center .button {
     border-radius: 50%;
     background-color: #F8E346;
     padding: 100px;
 }
 
-.button-center  .active {
+.buttons-sidebar .button-center  .active {
     padding: 120px;
     box-shadow: 0px 2px 69px 11px rgba(252,227,0,1);
 }
