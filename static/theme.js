@@ -1,82 +1,65 @@
 let data = {
-	"theme": "3",
-	"block": "1",
-	"logo": "static/image/logo.png",
-	"logoLeft": "static/image/left.png",
-	"logoRight": "static/image/right.png",
-	"logoHome": "static/image/home.png",
-	"blockRight": "static/image/block-right.png",
-	"test2": [
-		{
-			"title": "Новые клиенты<br> за сегодня",
+  "id": 123123123,
+  "ID": "2.2",
+  "theme": "1",
+  "type": "2",
+  "ekran": "",
+  "lang": "ru",
+  "logo": "static/image/logo.png",
+  "slide": "2.2(1)",
+  "map": [
+    {
+      "number": "1",
+      "ID": "2.2.1"
+    },
+    {
+      "number": "2",
+      "ID": "2.2.2"
+    }
+  ],
+  "content": [
+    {
+    	"type": "1",
+    	"title": "Новые клиенты за сегодня",
+		"img": "static/image/bg.jpg",
+		"text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, at!",
+		"video": "static/video/"
+    },
+    {
+    	"type": "2",
+    	"title": "Новые клиенты за сегодня",
+		"img": "static/image/bg.jpg",
+		"text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, at!",
+		"video": "static/video/"
+    }
+  ],
+  "dochki": [
+    {
+      "title": "Первая кнопка",
 			"img": "static/image/bg.jpg",
-			"text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, attest2!"
-		},
-		{
-			"title": "Новые клиенты<br> за сегодня",
+			"text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, attest2!",
+			"ID": "2.2.1"
+    },
+    {
+      "title": "Вторая кнопка",
 			"img": "static/image/bg.jpg",
-			"text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, at!"
-		},
-		{
-			"title": "Новые клиенты<br> за сегодня",
-			"img": "static/image/bg.jpg",
-			"text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, at!"
-		}
-	],
-	"test": [
-		{
-			"title": "Новые клиенты<br> за сегодня",
-			"img": "static/image/bg.jpg",
-			"text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, at!",
-			"video": "static/video/",
-			"buttonLeft": "",
-			"buttonRight": "",
-			"buttonReturn": ""
-		},
-		{
-			"title": "Новые клиенты за сегодня",
-			"img": "static/image/bg.jpg",
-			"text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, at!",
-			"video": "static/video/",
-			"buttonLeft": "",
-			"buttonRight": "",
-			"buttonReturn": ""
-		},
-		{
-			"title": "Новые клиенты за сегодня",
-			"img": "static/image/bg.jpg",
-			"text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, at!",
-			"video": "static/video/",
-			"buttonLeft": "image/left-button.png",
-			"buttonRight": "image/right-button.png",
-			"buttonReturn": "image/return.png"
-		},
-		{
-			"title": "Новые клиенты за сегодня",
-			"img": "static/image/bg.jpg",
-			"text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, at!",
-			"video": "static/video/",
-			"buttonLeft": "static/image/left-button.png",
-			"buttonRight": "static/image/right-button.png",
-			"buttonReturn": "static/image/return.png"
-		},
-		{
-			"title": "Новые клиенты за сегодня",
-			"img": "static/image/bg.jpg",
-			"text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, at!",
-			"video": "static/video/",
-			"buttonLeft": "",
-			"buttonRight": "",
-			"buttonReturn": ""
-		}
-	]
+			"text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, attest2!",
+			"ID": "2.2.2"
+    }
+  ],
+  "roditeli": [
+    {
+      "title": "Первая кнопка",
+			"ID": "2"
+    }
+  ]
 }
 
 window.onload = function() {
-	loadTheme();
+    loadTheme(data);
 }
 
-function loadTheme() {
+function loadTheme(data) {
 	if(data.theme == 1) {
         themeFirst(data);
     }else if(data.theme == 2) {
@@ -87,6 +70,7 @@ function loadTheme() {
 }
 
 function themeFirst(data) {
+
 	let themeContent = document.getElementById('theme-content');
 
 	let themeFirst = document.createElement('div');
@@ -98,7 +82,7 @@ function themeFirst(data) {
 	let div = document.createElement('div');
 	div.className = 'head-left-item';
 	let img = document.createElement('img');
-	img.setAttribute('src', data.logo);
+	img.setAttribute('src', 'static/image/logo-white.png');
 	img.setAttribute('alt', 'logo');
 
 	let div2 = document.createElement('div');
@@ -115,9 +99,9 @@ function themeFirst(data) {
 	let div4 = document.createElement('div');
 	div4.className = 'arrows';
 
-	div4.innerHTML = `<img src="`+ data.logoLeft +`" alt="left-arrow">
-	<img src="`+ data.logoHome +`" alt="left-arrow">
-	<img src="`+ data.logoRight +`" alt="left-arrow">`;
+	div4.innerHTML = `<img src="static/image/theme1-left.png" alt="left-arrow">
+	<img src="static/image/home.png" alt="left-arrow">
+	<img src="static/image/theme1-right.png" alt="left-arrow">`;
 
 	div3.insertBefore(div4, div3.children[0]);
 	header.insertBefore(div3, header.children[1]);
@@ -128,9 +112,9 @@ function themeFirst(data) {
 	div3.insertBefore(div5, div3.children[1]);
 	themeFirst.insertBefore(header, themeFirst.children[0]);
 
-	if(data.block == 3){
-		buttonSlide(data.test[3], themeFirst);
-	}else if(data.block == 4){
+	if(data.type == 2){
+		buttonSlide(themeFirst);
+	}else if(data.type == 1){
 		map(themeFirst) 
 	}else {
 		let container = document.createElement('div');
@@ -144,14 +128,11 @@ function themeFirst(data) {
 
 		let ul = document.createElement('ul'); 
 		ul.setAttribute( "id", "start-block" );
-		if(data.block == 2) {
-			for(let i = 0;i < data.test2.length; i++) {
-				ul.innerHTML += "<li><img src=" + data.test2[i].img + " alt='image'><div class='info'><h2>"+data.test2[i].title+"</h2><p>"+data.test2[i].text+"</p></div></li>" 
-			}
-		}else {
-			for(let i = 0;i < data.test.length; i++) {
-				ul.innerHTML += "<li><img src=" + data.test[i].img + " alt='image'><div class='info'><h2>"+data.test[i].title+"</h2><p>"+data.test[i].text+"</p></div></li>" 
-			}
+		
+		for(let i = 0;i < data.dochki.length; i++) {
+			ul.innerHTML += `<li><img src="`+ data.content[i].img + `" alt='image'>
+			<div class='info'><h2>`+ data.content[i].title +`</h2>
+			<p>`+ data.content[i].text +`</p></div></li>`;
 		}
 	/*for(var j = 1; j <= data.test.length; j++) {
 			var li = document.querySelectorAll('.container ul li');
@@ -164,20 +145,24 @@ function themeFirst(data) {
 	container.appendChild(ul);
 	}
 	themeContent.appendChild(themeFirst);
-
-	btnClick();
+	console.log(data)
+	btnClick(data.dochki);
 	mapClick();
 }
 
 // Theme1 button click 
 
-function btnClick () {
+function btnClick (data) {
 	let li = document.querySelectorAll('.container ul li');
 	let home = document.getElementById('home');
 	let info = document.getElementById('info-btn');
-
+	console.log(data)
 	home.onclick = function() {
 		console.log("+");
+		let ev = document.getElementById('block');
+		ev.click = function(){
+		socket.emit("send", blockNum);
+}
 	}
 	info.onclick = function() {
 		console.log("+");
@@ -189,6 +174,8 @@ function btnClick () {
 				li[j].classList.remove('active-block');
 			}
 			li[i].classList.add('active-block');
+			console.log(data[i].ID);
+			socket.emit("doshki", data.ID);
 			setTimeout(function() {
 				li[i].classList.remove('active-block');
 			},5000)
@@ -198,7 +185,7 @@ function btnClick () {
 
 // Theme 1 Slide Button
 
-function buttonSlide(date, themeFirst) {
+function buttonSlide( themeFirst) {
 	
 	let wrapperButton = document.createElement('div');
 	wrapperButton.className = 'wrapper-button';
@@ -208,16 +195,16 @@ function buttonSlide(date, themeFirst) {
 	
 
 	let buttonLeft = document.createElement('div');
-	buttonLeft.className = 'button-left';
-	buttonLeft.innerHTML = '<img src="'+date.buttonLeft+'" alt="">';
+	buttonLeft.className = 'button';
+	buttonLeft.innerHTML = '<img src="static/image/theme1-left2.png" alt=""><span>НАЗАД</span>';
 
 	let buttonCenter = document.createElement('div');
-	buttonCenter.className = 'button-center';
-	buttonCenter.innerHTML = '<img src="'+date.buttonReturn+'" alt="">';
+	buttonCenter.className = 'button button-active';
+	buttonCenter.innerHTML = '<img src="static/image/theme1-return.png" alt=""><span>НА ГЛАВНУЮ</span>';
 
 	let buttonRigth = document.createElement('div');
-	buttonRigth.className = 'button-right';
-	buttonRigth.innerHTML = '<img src="'+date.buttonRight+'" alt="">';
+	buttonRigth.className = 'button';
+	buttonRigth.innerHTML = '<img src="static/image/theme1-right2.png" alt=""><span>ВПЕРЕД</span>';
 	
 	wrapperCenter.insertBefore(buttonLeft, wrapperCenter.children[0]);
 	wrapperCenter.insertBefore(buttonCenter, wrapperCenter.children[1]);
@@ -253,7 +240,7 @@ function themeSecond(data) {
 
 	let headRight = document.createElement('div');
 	headRight.className = 'head-right-item';
-	headRight.innerHTML = '<img src="'+data.logoLeft+'" alt="left-arrow"><img src="'+data.logoHome+'" alt="left-arrow"><img src="'+data.logoRight+'" alt="right-arrow">';
+	headRight.innerHTML = '<img src="static/image/theme2-left.png" alt="left-arrow"><img src="static/image/home.png" alt="left-arrow"><img src="static/image/theme2-right.png 	" alt="right-arrow">';
 	header.insertBefore(headRight, header.children[1]);
 	
 	// Sidebar 
@@ -261,17 +248,16 @@ function themeSecond(data) {
 	let leftSidebar = document.createElement('div');
 	leftSidebar.className = 'left-sidebar';
 
-	leftSidebar.innerHTML = `<img src="`+data.logo+`" alt="logo">
+	leftSidebar.innerHTML = `<img src="static/image/logo-white2.png" alt="logo">
 	<h2>Академия политического менеджмента</h2>`;
-
+	console.log(data)
 	themeSecond.insertBefore(header, themeSecond.children[1]);
 
-	if(data.block == 3) {
-		buttonSlide(data.test[3], themeSecond);
+	if(data.type == 2) {
+		buttonSlide2(themeSecond);
 	}
-	else if(data.block == 4) {
-		console.log('+');
-		map2(data.test[3], themeSecond);
+	else if(data.type == 1) {
+		map2(data,themeSecond);
 	}
 	else{
 	themeSecond.insertBefore(leftSidebar, themeSecond.children[2]);
@@ -283,16 +269,10 @@ function themeSecond(data) {
 	let ul = document.createElement('ul'); 
 	ul.setAttribute( "id", "start-block" );
 
-	if(data.block == 2) {
-		for(let i = 0;i < data.test2.length; i++) {
-			ul.innerHTML += "<li><h2>" + data.test2[i].title +"</h2><img src='" + data.blockRight + "' alt=''></li>"; 
-		}
-	}else{
-		for(let i = 0;i < data.test.length; i++) {
-			ul.innerHTML += "<li><h2>" + data.test[i].title +"</h2><img src='" + data.blockRight + "' alt=''></li>"; 
-		}
+	for(let i = 0;i < data.dochki.length; i++) {
+		ul.innerHTML += "<li><h2>" + data.dochki[i].title +"</h2><img src='static/image/arrow-right.png' alt=''></li>"; 
 	}
-	
+
 	wrap.appendChild(ul);
 	}
 
@@ -304,10 +284,10 @@ function themeSecond(data) {
 
 // Theme 2 Slide Button
 
-function buttonSlide(date, themeSecond) {
+function buttonSlide2(themeSecond) {
 	let sidebar = document.createElement('div');
 	sidebar.className = 'buttons-sidebar';
-	sidebar.innerHTML = '<img src="'+date.logo +'" alt="logo">'
+	sidebar.innerHTML = '<img src="static/image/logo-white2.png" alt="logo">'
 	
 	themeSecond.insertBefore(sidebar, themeSecond.children[2]);
 
@@ -317,13 +297,16 @@ function buttonSlide(date, themeSecond) {
 	let buttonCenter = document.createElement('button-center');
 	buttonCenter.className = 'button-center';
 	buttonCenter.innerHTML = `<div class="button">
-	            		<img src="`+date.buttonLeft+`" alt="">
+	            		<img src="static/image/theme2-left2.png" alt="">
+	            		<span>НАЗАД</span>
 	            	</div>
 	            	<div class="button active">
-	            		<img src="`+date.buttonReturn+`" alt="">
+	            		<img src="static/image/theme2-return.png" alt="">
+	            		<span>НА ГЛАВАНУЮ</span>
 	            	</div>
 	            	<div class="button">
-	            		<img src="`+date.buttonRight+`" alt="">
+	            		<img src="static/image/theme2-right2.png" alt="">
+	            		<span>ВПЕРЕД</span>
 	            	</div>`;
 	wrapBtn.appendChild(buttonCenter);
 	themeSecond.insertBefore(wrapBtn, themeSecond.children[3]);
@@ -334,7 +317,7 @@ function buttonSlide(date, themeSecond) {
 function map2(date, themeSecond) {
 	let sidebar = document.createElement('div');
 	sidebar.className = 'buttons-sidebar';
-	sidebar.innerHTML = '<img src="'+date.logo +'" alt="logo">'
+	sidebar.innerHTML = '<img src="static/image/logo-white2.png" alt="logo">'
 
 	themeSecond.insertBefore(sidebar, themeSecond.children[2]);
 
@@ -376,16 +359,16 @@ function themeThird(data) {
 
 	let leftItem = document.createElement('div');
 	leftItem.className = 'left-item';
-	leftItem.innerHTML = `<img src="`+data.logo+`" alt="logo">
+	leftItem.innerHTML = `<img src="static/image/logo-blue.png" alt="logo">
     <h2 class="logo-text"><span>Институт</span> стратегических<br> инициатив</h2>`;
 
     header.insertBefore(leftItem, header.children[0]);
 
     let rightItem = document.createElement('div');
     rightItem.className = 'right-item';
-    rightItem.innerHTML = `<img id="btn-left" src="`+data.logoLeft+`" alt="">
-   	<img id = "home" src="`+data.logoHome+`" alt="">
-    <img id="btn-right" src="`+data.logoRight+`" alt="">`;
+    rightItem.innerHTML = `<img id="btn-left" src="static/image/theme3-left.png" alt="">
+   	<img id = "home" src="static/image/theme3-home.png" alt="">
+    <img id="btn-right" src="static/image/theme3-right.png" alt="">`;
 
     header.insertBefore(rightItem, header.children[1]);
     themeThird.insertBefore(header, themeThird.children[0]);
@@ -393,30 +376,29 @@ function themeThird(data) {
     let wrap = document.createElement('div');
     wrap.className = 'wrapper3';
 
-    if(data.block == 3) {
-    	buttonSlide3(data.test[3], wrap);
-    }else if(data.block == 4) {
+    if(data.type == 2) {
+    	buttonSlide3(data, wrap);
+    }else if(data.type == 1) {
     	map3(wrap);
     }else{
-    	let test = "";
-    	if(data.block == 2) {test = data.test2; }else { test = data.test; }
+    	// if(data.dochki.length == 2) {test = data.test2; }else { test = data.test; }
     	
-    	if(test.length <= 3) {
+    	if(data.dochki.length <= 3) {
     	let table = document.createElement('ul');
     	table.className = 'table';
 
-    	for(let i = 0; i < test.length; i++) {
+    	for(let i = 0; i < data.dochki.length; i++) {
 
     		let li = document.createElement('li');
     		
-    		li.style.backgroundImage = 'url('+ test[i].img +')';
-    		li.innerHTML = `<h3 class='text'>`+test[i].text+`</h3>
+    		li.style.backgroundImage = 'url('+ data.dochki[i].img +')';
+    		li.innerHTML = `<h3 class='text'>`+data.dochki[i].text+`</h3>
                     <span>next...</span>`;
             table.insertBefore(li, table.children[i]);
     	}
     	wrap.insertBefore(table, wrap.children[0]);
 
-    }else if(test.length <= 6) {
+    	}else if(data.dochki.length <= 6) {
 
     	let table = document.createElement('ul');
     	table.className = 'table';
@@ -433,7 +415,7 @@ function themeThird(data) {
     	let table2 = document.createElement('ul');
     	table2.className = 'table';
 
-    	for(let i = 3; i < test.length; i++) {
+    	for(let i = 3; i < data.dochki.length; i++) {
 
     		let li = document.createElement('li');
     		li.style.backgroundImage = 'url('+ test[i].img +')';
@@ -450,10 +432,6 @@ function themeThird(data) {
     let tab = document.getElementsByClassName('table')
     let ul = document.createElement('ul');
     ul.className = 'circle';
-
-    // for(let i = 0; i < tab.length; i++){
-    // 	ul.innerHTML += '<li></li>'; 
-    // }
     ul.innerHTML = `<li class="bg"></li>
     <li></li>`;
     wrap.insertBefore(ul, wrap.children[2]);
@@ -509,7 +487,6 @@ function themeThreeClick() {
     }
 
     function btnClick3(i) {
-
         for(let j = 0; j < table.length; j++) {
             li[j].classList.remove('bg');
 
@@ -522,17 +499,17 @@ function themeThreeClick() {
 
 //theme3 Slide Btn
 
-function buttonSlide3(date, wrap) {
+function buttonSlide3( wrap) {
 	let wrapBtn = document.createElement('div');
 	wrapBtn.className = 'wrapper-buttons';
 	wrapBtn.innerHTML = `<div class="button">
-    		<img src="`+date.buttonLeft+`" alt="icon">
+    		<img src="static/image/button-left.png" alt="icon">
     	</div>
     	<div class="button">
-    		<img src="`+date.buttonReturn+`" alt="icon">	
+    		<img src="static/image/button-return.png" alt="icon">	
     	</div>
     	<div class="button">
-    		<img src="`+date.buttonRight+`" alt="icon">
+    		<img src="static/image/button-right" alt="icon">
     	</div>`;
 
     	wrap.appendChild(wrapBtn);

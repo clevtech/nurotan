@@ -24,12 +24,13 @@
 	align-items: center;
 }
 .header2 .head-right-item img {
-	padding: 10px 30px;
+    padding: 10px 30px;
     background-color: #000;
     border-radius: 30px;
-    margin-right:5px;
+    margin-right: 5px;
     margin-left: 5px;
     height: 40px;
+    width: 80px;
 }
 
 .header2 .head-left-item {
@@ -261,6 +262,13 @@
     border-radius: 50%;
     background-color: #F8E346;
     padding: 100px;
+    position: relative;
+}
+
+.wrapper-button2 .button-center .button span {
+    position: absolute;
+    bottom: 60px;
+    left: 90px;
 }
 
 .wrapper-button2 .button-center  .active {
@@ -269,8 +277,15 @@
 }
 
 /* MAP */
-
-#map {
+.theme-second .wrap-map {
+    width: 100%;
+    height: 85vh;
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ .theme-second #map {
     display: flex;
     justify-content: center;
     align-items: center;

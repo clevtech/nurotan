@@ -52,6 +52,8 @@ body{
 .header .arrows img {
 	padding: 15px;
 	background-color: #005b6a;
+	height: 50px;
+	width: 50px;
 }
 .header .menu-buttons {
 	display: flex;
@@ -177,12 +179,24 @@ body{
 	align-items: center;
 }
 
-.wrapper-center img {
-	width: 150px;
-	padding: 50px;
+.wrapper-center .button {
+	width: 180px;
+	padding: 70px;
+	position: relative;
+}
+.wrapper-center .button img {
+	height: 70px;
+}
+.wrapper-center .button span {
+	position: absolute;
+	bottom: 15px;
+	left: 60px;
+	color: #065E6D;
+	text-transform: uppercase;
+	font-size: 12px;
 }
 
-.wrapper-center .button-center {
+.wrapper-center .button-active {
 	background-color: #fce300;
 }
 
@@ -228,12 +242,12 @@ body{
 
 /* MAP */
 
-.theme-second .wrap-map {
-	width: 100%;
-	height: 85vh;
-	min-height: 600px;
-	background-color: #02798C;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.theme-first .wrap-map {
+    width: 100%;
+    height: 85vh;
+    min-height: 600px;
+    background-color: #02798C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
